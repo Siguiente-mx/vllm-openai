@@ -14,4 +14,4 @@ FROM vllm-base AS vllm-openai
 RUN pip install accelerate
 COPY vllm vllm
 
-ENTRYPOINT ["python3", "-m", "vllm.entrypoints.openai.api_server"]
+CMD ["python3", "-m", "vllm.entrypoints.openai.api_server"]
