@@ -8,10 +8,6 @@ WORKDIR /workspace
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-FROM vllm-base AS vllm-openai
-
-# install additional dependencies for openai api server
-RUN pip install accelerate
-COPY vllm vllm
+COPY vllm .
 
 CMD ["python3", "-m", "vllm.entrypoints.openai.api_server"]
