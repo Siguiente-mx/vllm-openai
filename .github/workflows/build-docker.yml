@@ -14,8 +14,9 @@ on:
         default: "dev"
 
 jobs:
-  docker-build:
+  docker_build:
     runs-on: Default
+    name: Build docker container
     steps:
       -
         name: Checkout
