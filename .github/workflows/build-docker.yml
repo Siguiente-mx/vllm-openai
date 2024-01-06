@@ -15,7 +15,7 @@ on:
 
 jobs:
   docker-build:
-    runs-on: Siguiente-build-runner
+    runs-on: Default
     steps:
       -
         name: Checkout
