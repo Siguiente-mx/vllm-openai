@@ -1,10 +1,17 @@
-name: Docker Image CI
+name: CD | Docker-Build-Release
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Docker Image Tag"
+        required: false
+        default: "dev"
 
 jobs:
   docker-build:
